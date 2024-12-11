@@ -1,0 +1,195 @@
+body {
+  background-color: #121212;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+}
+
+.modal-content {
+  background-color: #282828;
+  color: #ffffff;
+}
+
+.modal-header,
+.modal-body {
+  border-bottom: 1px solid #444;
+}
+
+.btn-primary {
+  background-color: #1db954;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #1aa34a;
+}
+
+.playlist-container {
+  background-color: #181818;
+  padding: 20px;
+  height: 89vh;
+  overflow-y: auto;
+}
+
+.player {
+  background-color: #282828;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 89vh;
+}
+
+.details .now-playing {
+  font-size: 0.8rem;
+  color: #b3b3b3;
+}
+
+.track-art {
+  height: 200px;
+  width: 200px;
+  background-color: #333;
+  margin: 20px auto;
+  border-radius: 10px;
+  background-size: 100% 100%;
+}
+
+.track-name,
+.track-artist {
+  text-align: center;
+}
+
+.slider_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0px;
+  position: relative;
+}
+
+.volume_slider {
+  margin-right: 23px;
+}
+
+.current-time {
+  margin-right: 15px;
+}
+
+.total-duration {
+  margin-left: 15px;
+}
+
+.volume-icon {
+  margin-right: 10px;
+  font-size: 20px;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#filter {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.playlist-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #333;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.playlist-item:hover {
+  background-color: #444;
+  transform: scale(1.02);
+}
+
+.playlist-item img {
+  height: 50px;
+  width: 50px;
+  border-radius: 8px;
+  margin-right: 15px;
+}
+
+.playlist-item .fa-heart {
+  margin-left: auto;
+  cursor: pointer;
+}
+
+.playlist-item .fa-heart.active {
+  color: #1db954;
+}
+
+.playlist-item-details {
+  font-size: 1rem;
+  color: #fff;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.playlist-item-details:hover {
+  text-decoration: underline;
+  color: #1db954;
+}
+
+.playlist-item-details span {
+  display: block;
+  color: #b3b3b3;
+  font-size: 0.9rem;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.fa-random {
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.fa-repeat {
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.fa-repeat:hover {
+  color: #1aa34a;
+}
+
+.fa-repeat.active {
+  color: #1db954;
+}
+
+.prev-track{
+  color: #1db954;
+}
+
+.next-track{
+  color: #1db954;
+}
+
+.playpause-track{
+  color: #1db954;
+}
+
+.random-track i.active {
+  color: #1db954;
+}
+
+.fa:hover {
+  color: #1aa34a;
+  cursor: pointer;
+}

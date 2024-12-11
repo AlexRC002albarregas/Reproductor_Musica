@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reproductor de Música</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="d-flex justify-content-end">
+            <button type="button" class="btn btn-primary my-3" data-toggle="modal" data-target="#subirCancion">
+                Añadir Canción
+            </button>
+        </div>
+
+        <div class="modal fade" id="subirCancion" tabindex="-1" role="dialog" aria-labelledby="subirCancionLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="subirCancionLabel">Subir nueva canción</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="upload-song" onsubmit="submitSong(event)" class="d-flex flex-column">
+                            <div class="form-group">
+                                <label for="music">Añadir archivo</label>
+                                <input type="file" name="music" id="music" accept=".mp3,audio/mpeg"
+                                    class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="title">Título</label>
+                                <input type="text" name="title" id="title" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="artist">Autor</label>
+                                <input type="text" name="artist" id="artist" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="cover">Imagen de portada</label>
+                                <input type="file" name="cover" id="cover" accept=".jpeg,.jpg,.png"
+                                    class="form-control">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Subir</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="playlist-container col-md-6">
+                <div class="row">
+                    <h4 class="col-6">Lista de Reproducción</h4>
+                    <select name="filter" id="filter" class="col-6">
+                        <option value="filtros" selected disabled>Filtros</option>
+                        <option value="todas">Todas las canciones</option>
+                        <option value="favoritas">Favoritas</option>
+                    </select>
+                </div>
+                
+                <div class="playlist">
+
+                </div>
+            </div>
+
+            <div class="player col-md-6">
+                <div class="details">
+                    <div class="now-playing">SONANDO x DE y</div>
+                    <div class="track-art"></div>
+                    <div class="track-name">Nombre de la canción</div>
+                    <div class="track-artist">Artista</div>
+                </div>
+
+                <div class="slider_container">
+                    <span class="current-time">00:00</span>
+                    <input type="range" min="1" max="100" value="0" class="seek_slider">
+                    <span class="total-duration">00:00</span>
+                </div>
+
+                <div class="slider_container">
+                    <div class="volume-icon"><i class="fa fa-volume-up"></i></div>
+                    <input type="range" class="volume_slider" min="0" max="100" value="50">
+                </div>
+
+                <div class="buttons">
+                    <div class="random-track" onclick="randomTrack()">
+                        <i class="fa fa-random fa-2x" title="random"></i>
+                    </div>
+                    <div class="prev-track" onclick="prevTrack()">
+                        <i class="fa fa-step-backward fa-2x"></i>
+                    </div>
+                    <div class="playpause-track" onclick="playpauseTrack()">
+                        <i class="fa fa-play-circle fa-5x"></i>
+                    </div>
+                    <div class="next-track" onclick="nextTrack()">
+                        <i class="fa fa-step-forward fa-2x"></i>
+                    </div>
+                    <div class="repeat-track" onclick="repeatTrack()">
+                        <i class="fa fa-repeat fa-2x" title="repeat"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>
